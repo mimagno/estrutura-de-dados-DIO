@@ -8,27 +8,28 @@ public class Lifo<T> {
         this.refInputNode = null;
     }
 
-    public Node<T> top(){
-        return this.refInputNode;
+    public T top(){
+        return this.refInputNode.getData();
     }
 
-    public void push(Node newNo){
+    public void push(T obj){
+        Node<T> newNode = new Node<>(obj);
         Node<T> refAux = this.refInputNode;
-        this.refInputNode = newNo;
+        this.refInputNode = newNode;
         this.refInputNode.setRefNode(refAux);
     }
 
-    public Node<T> pop(){
+    public T pop(){
         if(!this.isEmpty()){
             Node<T> nodePoped = this.refInputNode;
             this.refInputNode = this.refInputNode.getRefNode();
-            return nodePoped;
+            return nodePoped.getData();
         }
         return null;
     }
 
     public Boolean isEmpty(){
-       return this.refInputNode == null ? true : false;
+        return this.refInputNode == null ? true : false;
     }
 
     @Override
@@ -37,11 +38,11 @@ public class Lifo<T> {
         stringReturn += "     Stack\n";
         stringReturn += "---------------\n";
 
-        Node nodeAux = this.refInputNode;
+        Node<T> nodeAux = this.refInputNode;
 
         while (true){
             if (nodeAux != null){
-                stringReturn += "[Node{dado=" + nodeAux.getData() + "}]\n";
+                stringReturn += "[Node{data=" + nodeAux.getData() + "}]\n";
                 nodeAux = nodeAux.getRefNode();
             }else {
                 break;

@@ -1,38 +1,38 @@
 package fifo;
 
-public class Node {
-    private Object object;
-    private Node refNo;
+public class Node<T> {
+    private T data;
+    private Node<T> refNo;
 
-    public Node(Object object){
+    public Node(T object){
         this.refNo = null;
-        this.object = object;
+        this.data = object;
     }
 
     public Node(){
 
     }
 
-    public Object getObject() {
-        return object;
+    public T getData() {
+        return data;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public Node getRefNo() {
+    public Node<T> getRefNo() {
         return refNo;
     }
 
-    public void setRefNo(Node refNo) {
+    public void setRefNo(Node<T> refNo) {
         this.refNo = refNo;
     }
 
     @Override
     public String toString() {
         return "Node{" +
-                "object=" + object +
+                "data=" + data +
                 '}';
     }
 }

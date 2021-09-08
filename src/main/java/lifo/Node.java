@@ -29,7 +29,7 @@ public class Node<T> {
     @Override
     public String toString() {
         return "Node{" +
-                "dado=" + this.data +
+                "data=" + this.data +
                 '}';
     }
 }

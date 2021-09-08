@@ -1,15 +1,16 @@
 package fifo;
 
 public class Main {
-    public static void main(String[] args) {
+    public static <T> void main(String[] args) {
         Fifo fifo = new Fifo();
 
-        fifo.enqueue(new Node(1));
-        fifo.enqueue(new Node(2));
-        fifo.enqueue(new Node(3));
-        fifo.enqueue(new Node(4));
-        fifo.enqueue(new Node(5));
+        fifo.enqueue(1);
+        fifo.enqueue(2);
+        fifo.enqueue(3);
+        fifo.enqueue(4);
+        fifo.enqueue("ABC");
 
         System.out.println(fifo);
+        System.out.println(fifo.first());
     }
 }
