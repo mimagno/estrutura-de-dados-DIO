@@ -17,9 +17,9 @@ public class Main {
        System.out.println(lifo.pop());
        System.out.println(lifo);
 
-//        System.out.println(lifo.pop());
+//     System.out.println(lifo.pop());
 //
-//        System.out.println(lifo);
+//     System.out.println(lifo);
 
     }
 }
